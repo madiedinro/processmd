@@ -33,6 +33,8 @@ function processmd (options, callback) {
     markdownIt.use(require('markdown-it-named-headings'))
   }
 
+  markdownIt.use(require('markdown-it-alerts'));
+
   options.markdownRenderer = options.markdownRenderer || function mdRender (str) { return markdownIt.render(str) }
 
   const globs = (options.files || []).concat(options._ || [])
